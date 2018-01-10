@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 55494ca4efa459c4832d0a10d2f862fce8616061
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 55494ca4efa459c4832d0a10d2f862fce8616061
 <body>
   <script type="text/javascript">
     let wordToGuess = ["B", "O", "N", "J", "O", "U", "R"]; // create an array with the word to guess
     let guessedLetters = ["_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "]; // create an array with the 'hidden' letters to guess
     let allLetters = [" "]; // create an array to store already used letters
     let failed = 0; // counter of wrong letters
+<<<<<<< HEAD
     let guessLetter = function() { // definition of the function
+=======
+    let guessLetter = function(){ // definition of the function
+>>>>>>> 55494ca4efa459c4832d0a10d2f862fce8616061
 
       /* while loop that runs until the arrays wordToGuess and guessedLetters, both converted to
       strings, are the same.
@@ -23,6 +33,7 @@
       while (guessedLetters.toString() !== wordToGuess.toString()) {
         let letterGuessed = window.prompt("Enter a letter").toUpperCase();
 
+<<<<<<< HEAD
         /* for loop that goes from 0 to the length of the array with the word to guess.
         Checks if the letter from the input exists in the word to guess, if so, puts it in the
         array with the 'hidden' letters. */
@@ -45,4 +56,29 @@
   </script>
 </body>
 
+=======
+      /* for loop that goes from 0 to the length of the array with the word to guess.
+      Checks if the letter from the input exists in the word to guess, if so, puts it in the
+      array with the 'hidden' letters. */
+      for (var i = 0; i < wordToGuess.length; i++) {
+        if (letterGuessed === wordToGuess[i]) {
+          guessedLetters[i] = letterGuessed;
+          }
+      }
+      /* checks if the letter from the prompt was already used, if not, the failed counter goes up.
+      
+      include method checks if a value is included in an array, returns true or false.*/
+      if (guessedLetters.includes(letterGuessed) !== true) {
+        failed++;
+        console.log(failed + " wrong letters");
+      }
+      console.log(guessedLetters); // shows the array with the so far guessed letters.
+    }
+  }
+  guessLetter(); //function relaunch
+
+
+  </script>
+</body>
+>>>>>>> 55494ca4efa459c4832d0a10d2f862fce8616061
 </html>
