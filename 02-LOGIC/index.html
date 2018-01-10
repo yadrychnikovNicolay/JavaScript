@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+  //EXO ONE
+    let language = "en";
+    let message = "";
+    let helloFrench = "Bonjour tout le monde";
+    let helloSpanish = "Hola, Mundo";
+    if (language == "en") {
+      message = "Hello World";
+    } else if (language == "fr") {
+      message = "Bonjour tout le monde";
+    } else {
+      message = "Hola, Mundo";
+    }
+    console.log(message);
+
+
+    //EXO TWO
+    let score = 0;
+    let result = "";
+    if (score >= 90) {
+      result = "A";
+    } else if (score <= 50) {
+      result = "C";
+    } else {
+      result = "B";
+    }
+    console.log(result);
+
+
+    //EXO THREE
+    let singularWord ="pomme";
+    let numberOfThings = 1;
+    let resultExoThree = " ";
+    if (numberOfThings > 1) {
+      resultExoThree = "Je possède " + numberOfThings + " " + singularWord + "s";
+    } else if (numberOfThings <= 0) {
+      resultExoThree = "Je ne possède pas de " + singularWord;
+    } else {
+      resultExoThree = "Je possède " + numberOfThings + " " + singularWord;
+    }
+    console.log(resultExoThree);
+
+  </script>
+</body>
+</html>

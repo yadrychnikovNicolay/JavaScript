@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+  //EXO ONE
+    for (let i = 0; i < 21; i++) {
+      if (i % 2 == 0) {
+        console.log(i + " Is even");
+      } else {
+        console.log(i + " Is odd");
+      }
+    }
+
+    //EXO TWO
+    for (let i = 0; i < 11; i++) {
+      let response = i * 9;
+      console.log(i + " * 9 = " + response);
+    }
+
+    //EXO THREE
+    for (let i = 0; i <= 100; i++) {
+      let grade = "";
+      switch (true) {
+        case (i > 90):
+          grade = "A";
+        break;
+        case (i>80):
+          grade = "B";
+        break;
+        case (i>70):
+          grade = "C";
+        break;
+        case (i>65):
+          grade = "D";
+        break;
+        default: grade = "F";
+      }
+        console.log("Pour " + i + " points vous avez le grade " + grade);
+    }
+
+    //EXO FOUR
+    let pyramid = "";
+    for (var i = 0; i < 6; i++) {
+      pyramid = pyramid + "* ";
+      console.log(pyramid);
+    }
+
+    //OR
+
+    for (var i = 0; i < 6; i++) {
+      let asterisk = "*";
+      console.log(asterisk.repeat(i));
+    }
+
+
+  </script>
+</body>
+</html>

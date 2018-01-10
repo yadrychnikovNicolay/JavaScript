@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Arrays</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /* groceries.forEach(function(value, iterator){
+    console.log(value, iterator);
+  });
+
+  groceries.forEach((value, iterator,) => {
+  console.log(value, iterator);
+  });
+
+  */
+
+
+  //EXO ONE
+  let addArray = [1,2, 3, 4, 5, 6, 7, 8, 9];
+  let total = 0;
+  for (let i = 0; i < addArray.length; i++) {
+    total += addArray[i]
+  }
+  console.log(total);
+
+  //OR
+
+  /* let sum = [1, 2, 3, 4, 5, 6, 7, 8, 9].reduce((a,b) => a+b, 0);
+  console.log(sum); */
+
+
+  //EXO TWO
+  let actorNames = ["actorOne", "actorTwo", "actorThree"];
+  let position = ["premier", "second", "troisième"];
+  actorNames.forEach(function(element, i){
+    console.log("La " + position[i] + " est " + element);
+  });
+
+
+
+  //EXO THREE
+  let marioArray = ["Mario", "Luigi", "Peach"];
+  let marioClone = marioArray.slice();
+  marioClone.push("Bowser");
+  console.log("marioArray = " + marioArray, "marioClone = " + marioClone);
+
+
+  </script>
+</body>
+</html>
