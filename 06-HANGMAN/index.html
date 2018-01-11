@@ -10,9 +10,9 @@
 
 <body>
   <script type="text/javascript">
-    let wordToGuess = ["B", "O", "N", "J", "O", "U", "R"]; // create an array with the word to guess
-    let guessedLetters = ["_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "]; // create an array with the 'hidden' letters to guess
-    let allLetters = [" "]; // create an array to store already used letters
+    let wordToGuess = ["N", "O", "T", " ", "B", "O", "N", "J", "O", "U", "R"]; // create an array with the word to guess
+    let guessedLetters = ["_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "]; // create an array with the 'hidden' letters to guess
+    let wrong = []; // define an empty array for wrong letters
     let failed = 0; // counter of wrong letters
     let guessLetter = function() { // definition of the function
 
@@ -22,6 +22,8 @@
       launch a prompt that asks for the letter the user wants to try, puts it in uppercase */
       while (guessedLetters.toString() !== wordToGuess.toString()) {
         let letterGuessed = window.prompt("Enter a letter").toUpperCase();
+        if (wrong.includes(letterGuessed) === false) {
+          wrong.push(letterGuessed);
 
         /* for loop that goes from 0 to the length of the array with the word to guess.
         Checks if the letter from the input exists in the word to guess, if so, puts it in the
@@ -36,9 +38,10 @@
         include method checks if a value is included in an array, returns true or false.*/
         if (guessedLetters.includes(letterGuessed) !== true) {
           failed++;
-          console.log(failed + " wrong letters");
+          console.log(failed + " wrong letter(s)");
         }
         console.log(guessedLetters); // shows the array with the so far guessed letters.
+        }
       }
     }
     guessLetter(); //function relaunch

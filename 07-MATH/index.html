@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+  //EXO ONE
+    let floatBateau = 10.4;
+    let couleBateau = Math.floor(floatBateau);
+    let voleBateau = Math.ceil(floatBateau);
+    console.log("floatBateau : "+ floatBateau+ "\ncouleBateau : "+couleBateau + "\nvoleBateau : " + voleBateau);
+
+  //EXO TWO
+  let fiftyHundred = Math.floor(Math.random() * 49 ) + 51;
+  let zeroOne = Math.round(Math.random());
+  let zeroTen = Math.floor(Math.random() * 11);
+  console.log("between 50 and 100 not included : "+fiftyHundred + "\none or zero : " +zeroOne + "\n0 to 10 included : " + zeroTen);
+
+  //EXO THREE
+  let iterationNb = window.prompt("number of players : ");
+  let kombat = ["Goro", "Johnny Cage", "Kano" , "Liu Kang", "Raiden", "Reptile", "Scorpion", "Shang Tsung", "Sonya", "Sub-Zero"];
+  for (var i = 0; i < iterationNb; i++) {
+    let chosen = Math.floor(Math.random() * kombat.length);
+    console.log( "your fighter is : " + kombat[chosen]);
+
+  }
+
+
+  </script>
+</body>
+</html>

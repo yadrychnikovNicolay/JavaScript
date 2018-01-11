@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    let msg = "";
+    let tryCounter = 1;
+    let valueMin = 10;
+    let valueMax = 20;
+
+
+
+    // function that generates a random number between valueMin and valueMax
+    let randomMinMax = function() {
+      let chosen = Math.round(Math.random() * (valueMax - valueMin)) + valueMin;
+      return chosen;
+    }
+    // variable that takes the output from the randomMinMax function
+    let randomNumber = randomMinMax();
+
+    // function that checks if the number you entered is in the range and wether it is exact, higher or lower
+    let isRightNumber = function() {
+      let enteredNumber = window.prompt("Entrez un chiffre entre " + valueMin + " et " + valueMax); // prompt to enter the number you gessed
+      if (enteredNumber > valueMax || enteredNumber < valueMin) {  // if the number is outside the range
+        window.alert("Your number is outside the range");
+        isRightNumber();
+      } else if (isNaN(enteredNumber)) {   // if the number is Not a Number
+        window.alert("It's not a number");
+        isRightNumber();
+      } else {
+        if (enteredNumber > randomNumber) {  // if it is a number AND in the range, checks if the guessed number is higher than the random one
+          tryCounter++;
+          msg = (enteredNumber) + " is too high, try again";
+          window.alert(msg);
+          isRightNumber();
+        } else if (enteredNumber < randomNumber) {  // checks if the guessed number is lower than the random one
+          tryCounter++;
+          msg = (enteredNumber)+" is too low, try again";
+          window.alert(msg);
+          isRightNumber();
+        } else {  // if it's neither lower OR higher, it is then the same one
+          msg = "Good job, you won"
+          window.alert(msg + " you found the answer in " + tryCounter + " tries" + "\n Your number was " + randomNumber);
+        }
+      }
+    }
+    isRightNumber();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* randomMinMax();
+    let isRightNumber = function() {
+      while (true) {
+      let enteredNumber = window.prompt("Entrez un chiffre entre " + valueMin + " et " + valueMax);
+        if (enteredNumber == randomMinMax.chosen) {
+          msg = "Good job";
+          console.log(msg + " you found the answer in " + tryCounter + " tries");
+          return false;
+        } else if (enteredNumber < randomMinMax.chosen) {
+          tryCounter++;
+          msg = "Your number is too high, try again";
+          console.log(msg);
+          return true;
+        } else if (enteredNumber > randomMinMax.chosen) {
+          tryCounter++;
+          msg = "Your number is too low";
+          console.log(msg);
+          return false;
+        }
+      }
+    } */
+  </script>
+</body>
+
+</html>

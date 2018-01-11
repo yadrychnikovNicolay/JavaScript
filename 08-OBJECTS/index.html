@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+  //EXO ONE
+    let character = {
+      name : "beggar",
+      age : 35,
+      itemsToGive : ["potion", "key", "bomb", "dagger", "clothes", "coins"],
+      giveItem : function(){
+          let chosen = Math.floor(Math.random() * this.itemsToGive.length);
+          return this.itemsToGive[chosen];
+      }
+    }
+
+    for(info in character) {
+      console.log(character[info]);
+    }
+    console.log("He gave you : " + character.giveItem());
+
+    //EXO TWO
+    let sword = {
+      title : "katana of destiny of symphony of the end of the world",
+      physic : 40,
+      magic : 0,
+      minLevel : 15,
+      available : true,
+    }
+    let hatchet = {
+      title : "woodcutter's dream",
+      physic : 16,
+      magic : 2,
+      minLevel : 7,
+      available: true,
+    }
+    let magicWand = {
+      title : "most magical wand ever",
+      physic : 2,
+      magic : 34,
+      minLevel : 10,
+      available : true,
+    }
+    let opWeapon = {
+      title : "DOOM",
+      physic : 666,
+      magic : 666,
+      minLevel : 666,
+      available : false,
+
+    }
+    let vendorSelling = [sword, hatchet, magicWand, opWeapon];
+      let showSelling = function(){
+        for (var i = 0; i < vendorSelling.length; i++) {
+          console.log(vendorSelling[i]);
+        }
+      }
+    //showSelling();
+      let isAvailable = function(){
+        for (var i = 0; i < vendorSelling.length; i++) {
+          if (vendorSelling[i].available == true) {
+            console.log(vendorSelling[i]);
+          }
+        }
+      }
+    //isAvailable();
+    let minLevelTen = function(){
+      for (var i = 0; i < vendorSelling.length; i++) {
+        if (vendorSelling[i].minLevel >= 10) {
+          console.log(vendorSelling[i]);
+        }
+      }
+    }
+    //minLevelTen();
+
+    //EXO THREE
+    let mainCharacter = {
+      name : "Solaire of Astora",
+      level : 16,
+      life : 3600,
+      weapon : {
+        name : "Sunlight straight sword",
+        damage : 66,
+      }
+    }
+
+    let attack = function(){
+      return this.name + " attacks with " + this.weapon.name + ". The damage is " + (this.weapon.damage * this.level);
+    }
+    console.log(attack());
+
+    //BONUS
+    let char = {
+      init: function(name, level, life, weaponName, weaponDmg){
+      this.name = name;
+      this.level = level;
+      this.life = life;
+      this.weaponName = weaponName;
+      this.weaponDmg = weaponDmg;
+      }
+    }
+
+    let hero = Object.create(char);
+    hero.init("Solaire", 16, 6000, "Sunlight", 66);
+    hero.attack = function(){
+      console.log(this.name + " attacks " + foe.name);
+      console.log("with " + this.weaponName);
+      console.log("and deals " + this.level * this.weaponDmg + " damage");
+      console.log(foe.name + " has now " + (foe.life - (this.level * this.weaponDmg)) + " HP");
+    }
+
+    let foe = Object.create(char);
+    foe.init("Deacons", 20, 9000, "Staff of Deacons", 30);
+
+    hero.attack();
+
+  </script>
+</body>
+</html>
