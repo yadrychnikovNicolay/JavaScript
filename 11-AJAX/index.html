@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    let ajax = new XMLHttpRequest();
+
+    let whenDataLoaded = function(){
+      let dataText = ajax.responseText;
+      let dataObject = JSON.parse(dataText);
+      manipulateData(dataObject);
+      console.log(dataObject);
+      console.log(arrayA);
+      console.log(arrayB);
+      console.log(arrayC);
+      console.log(bahrain);
+      console.log(dataObject[dataObject.length - 1].score);
+      console.log(dataObject[0].score);
+    }
+
+    ajax.onload = whenDataLoaded;
+    ajax.open("GET", "data.json", true);
+    ajax.send(null);
+
+    let addRandomToArray = function(data){
+      data = data.map(obj => {
+        obj.score = Math.floor(Math.random() * 1001);
+      });
+    }
+
+    let sortArray = function(data){
+      data.sort(function(a, b){
+        return a.score - b.score;
+      });
+    }
+
+    let arrayA = [];
+    let arrayB = [];
+    let arrayC = [];
+
+    let placeInCategory = function(data){
+      data.forEach(
+        function(object) {
+          if (object.score > 750) {
+            arrayA.push(object);
+          } else if (object.score >= 500) {
+            arrayB.push(object);
+          } else {
+            arrayC.push(object);
+          }
+        });
+    }
+
+    let bahrain = [];
+
+    let livingInBahrain = function(data){
+      bahrain = data.filter(object => object.country == "Bahrain");
+      console.log(bahrain.length);
+    }
+
+    let manipulateData = function(data){
+      addRandomToArray(data);
+      sortArray(data);
+      placeInCategory(data);
+      livingInBahrain(data);
+      displayHTML(data);
+
+
+    }
+
+    let displayHTML = function(data){
+      let body = document.querySelector("body");
+      let htmlBahrain = document.createElement("p");
+      let htmlHighest = document.createElement("p");
+      let htmlLowest = document.createElement("p");
+
+      htmlBahrain.innerText = bahrain.length;
+      htmlHighest.innerText = data[data.length - 1].score;
+      htmlLowest.innerText = data[0].score;
+
+      body.appendChild(htmlBahrain);
+      body.appendChild(htmlHighest);
+      body.appendChild(htmlLowest);
+    }
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+  // create a new instance of XMLHttpRequest
+  let ajax = new XMLHttpRequest();
+      // the action the we will do when the request is finshed
+      let whenDataLoaded = function(){
+        let dataText = ajax.responseText;
+        let dataObject = JSON.parse(dataText);
+        manipulateData(dataObject);
+      }
+      ajax.onload = whenDataLoaded();
+      // the type, the url, asynchronous ?
+      ajax.open("GET", "mydata.json", true);
+      // sed the request
+      ajax.send(null);
+
+      let manipulateData = function(data){
+        for (var i = 0; i < data.children.length; i++) {
+          data.children[i] = data.children[i] + " hello ";
+        }
+        displayChildren(data);
+      }
+
+      let displayChildren : function(data){
+        for (var i = 0; i < data.children.length; i++) {
+          let recipient = document.getElementById("recipient");
+          let element = document.createElement("div");
+          element.innerHTML = data.children[i];
+          recipient.appendChild(element);
+        }
+      }
+
+  </script>
+</body>
+</html>
