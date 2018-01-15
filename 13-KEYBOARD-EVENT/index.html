@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="main.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="character">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </div>
+  <br>
+  <div id="up">
+    UPUPUPUPUPUPUPUPUP
+  </div>
+  <br>
+  <div id="down">
+    DOWNDOWNDOWNDOWNDOWNDOWN
+  </div>
+  <br>
+  <div id="left">
+    LEFTLEFTLEFTLEFTLEFT
+  </div>
+  <br>
+  <div id="right">
+    RIGHTRIGHTRIGHTRIGHTRIGHT
+  </div>
+
+  <script type="text/javascript">
+    let character = document.getElementById("character");
+
+    window.addEventListener("keypress", function(event) {
+      const keyName = event.key;
+      switch (keyName) {
+        case "0":
+          character.style.backgroundColor = "red";
+          break;
+        case "1":
+          character.style.backgroundColor = "blue";
+          break;
+        case "2":
+          character.style.backgroundColor = "green";
+          break;
+        case "3":
+          character.style.backgroundColor = "yellow";
+          break;
+        case "4":
+          character.style.backgroundColor = "brown";
+          break;
+        case "5":
+          character.style.backgroundColor = "orange";
+          break;
+        case "6":
+          character.style.backgroundColor = "cyan";
+          break;
+        case "7":
+          character.style.backgroundColor = "black";
+          break;
+        case "8":
+          character.style.backgroundColor = "grey";
+          break;
+        case "9":
+          character.style.backgroundColor = "purple";
+          break;
+        default:
+          character.style.backgroundColor = "white";
+      }
+    }, false);
+
+    let up = document.getElementById("up");
+    let down = document.getElementById("down");
+    let left = document.getElementById("left");
+    let right = document.getElementById("right");
+
+
+
+    window.addEventListener("keydown", function(event) {
+      const keyDirection = event.key;
+      switch (keyDirection) {
+        case "ArrowUp":
+          up.classList.add("highlight");
+          break;
+        case "ArrowDown":
+          down.classList.add("highlight");
+          break;
+        case "ArrowLeft":
+          left.classList.add("highlight");
+          break;
+        case "ArrowRight":
+          right.classList.add("highlight");
+          break;
+          default:
+      }
+    }, false);
+
+    window.addEventListener("keyup", function(event) {
+      const keyDirection = event.key;
+      switch (keyDirection) {
+        case "ArrowUp":
+          up.classList.remove("highlight");
+          break;
+        case "ArrowDown":
+          down.classList.remove("highlight");
+          break;
+        case "ArrowLeft":
+          left.classList.remove("highlight");
+          break;
+        case "ArrowRight":
+          right.classList.remove("highlight");
+          break;
+          default:
+      }
+    }, false);
+  </script>
+</body>
+
+</html>
